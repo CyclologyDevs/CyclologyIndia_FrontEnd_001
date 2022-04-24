@@ -6,7 +6,7 @@ import axios from 'axios'
 import logo from '../images/logo.png';
 import {Link} from 'react-router-dom';
 
-const Profile = () => {
+const ProfileEdit = () => {
 
     const [data, setData] = useState('')
     const id = sessionStorage.getItem('uuid')
@@ -14,7 +14,7 @@ const Profile = () => {
     const values = async () => {
         try {
             await axios
-                .get(`http://127.0.0.1:3600/account/profile/${id}`)
+                .get(`http://153.92.5.193:3600/account/profile/${id}`)
                 .then(res => {
                     setData(res.data.data)
                     // console.log(res)
@@ -77,8 +77,8 @@ const Profile = () => {
                             <h2 className='m'>{data.about_you}</h2>
                         </div>
                     </div>
-                    <Link to='/profileEdit'>
-                        <button className='btn bg-orange-600 py-2 xl:px-40 px-6 xl:ml-72 ml-0 mb-8 text-lg text-white'>Edit</button>
+                    <Link to='/profile'>
+                        <button className='btn bg-orange-600 py-2 xl:px-40 px-6 xl:ml-72 ml-0 mb-8 text-lg text-white'>Save</button>
                     </Link>
                 </div>
             </div>
@@ -86,4 +86,4 @@ const Profile = () => {
     )
 }
 
-export default Profile;
+export default ProfileEdit;

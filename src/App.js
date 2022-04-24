@@ -37,8 +37,10 @@ import UpcomingEvent from './Event/UpcomingEvent';
 import Event1 from './Event/Event1';
 import WeeklyBoard from './Event/WeeklyBoard';
 import Profile from './MainPages/Profile';
+import ProfileEdit from './MainPages/ProfileEdit';
 import ForgotPage from './Components/ForgotPage';
 import ConnectStrava from './Components/ConnectStrava';
+import ConnectStravaS from './Components/ConnectStravaS';
 import Navbar from './Components/Navbar';
 import Event2 from './Event/Event2';
 import Event3 from './Event/Event3';
@@ -104,6 +106,16 @@ function App() {
             <Navbar auth={auth} />
             <Profile />
             <ConnectStrava />
+          </Route>
+          <Route exact path="/profileEdit">
+            <Navbar auth={auth} />
+            <ProfileEdit />
+            <ConnectStrava />
+          </Route>
+          <Route exact path="/profileStrava">
+            <Navbar auth={auth} />
+            <Profile />
+            <ConnectStravaS />
           </Route>
 
           {/* <Protectedroute exact path="/login" component={Login} auth={auth} />

@@ -18,7 +18,7 @@ function Login(props) {
   const onSubmit = async (e) => {
     // e.preventDefault();
     const Data = { email, password };
-    await fetch('http://153.92.5.193:3600/account/login', {
+    await fetch('http://127.0.0.1:3600/account/login', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(Data)
